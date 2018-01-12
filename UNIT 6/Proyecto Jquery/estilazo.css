@@ -1,0 +1,107 @@
+body{
+    background-color: #1A0001;
+    padding: 0px;
+    margin:0px;
+}
+@font-face {
+    font-family: aileron;
+    src: url(Aileron-Black.otf);
+}
+
+@font-face {
+    font-family: aileron_thin;
+    src: url(Aileron-Thin.otf);
+}
+a{
+    font-family:aileron_thin;
+}
+.encabezado{
+    min-height:45px;
+    background-color: #4E0000;
+    position: fixed;
+}
+
+.encabezado img{
+    background-size: 100%;
+
+    height:auto;
+}
+
+#ojo{
+    width:5%;
+}
+
+.encabezado a{
+    font-family: aileron;
+    font-size:30px;
+    text-decoration: none;
+    color: #000;
+}
+
+.buscador{
+    height: 45px;
+    float: right;
+    display: inline-flex;
+    margin-right: 2%;
+    background-color: white;
+    width:20%;
+}
+
+.buscador input{
+    border-style:none;
+}
+
+.buscador button{
+    border-radius:100%;
+    background-color: transparent;
+    border-style:solid;
+    border-color: #000;
+    border-width:1px;
+}
+
+.buscador img{
+    margin:0px;
+    height:auto;
+    padding:0px;
+    display: inline-flex;
+    background-color: transparent;
+    width:10%;
+    background-size: 100%;
+    float: right;
+
+}
+.resultados{
+    background-color: transparent;
+    position: inherit;
+    padding: 0px;
+    margin:0px;
+    width:100%;
+}
+.resultados div{
+    width:30%;
+    display: inline-block;
+    background-color: #670001;
+    height:auto;
+    margin:1%;
+    border-style:solid;
+    border-color: #000;
+
+}
+
+.resultados a{
+    text-decoration: none;
+    font-family: aileron_thin;
+    color: white;
+    font-size:18px;
+    display: inline-block;
+}
+
+.resultados img{
+    background-size: 100%;
+    margin-top:5%;
+    height:auto;
+    max-height:350px;
+    width:100%;
+}
+
+
