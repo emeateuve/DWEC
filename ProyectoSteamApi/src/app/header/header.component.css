@@ -1,0 +1,78 @@
+div{
+  margin:0px;
+  padding:0px;
+}
+
+.encabezado{
+  background:rgba(0,0,0,0.6);
+  display: block;
+  position: static;
+  width:100%;
+  height:auto;
+  border-bottom:solid;
+  border-color: white;
+  border-width: 1px;
+
+}
+
+.menu{
+  opacity: 1;
+  height:60px;
+}
+
+
+
+.menu ul li:hover{
+  opacity:2;
+  background-color: rgba(0,0,0,0.4);
+  transition: background-color 1s ease;
+
+}
+
+.menu ul li:hover a{
+  color: white;
+  font-weight: bold;
+}
+
+.menu ul li a{
+  display: table-cell;
+  width:115px;
+  vertical-align: middle;
+  text-align: center;
+  height: inherit;
+  color:white;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.menu ul{
+  height:inherit;
+}
+
+.menu ul li{
+  list-style:none;
+  text-align: center;
+  display: inline-block;
+  height:inherit;
+  background-color: transparent;
+  transition: background-color 0.3s linear;
+  color:white;
+}
+
+.menu ul li:last-child{
+  border-radius: 0px 10px 10px 0px;
+}
+
+.menu ul li:nth-child(1){
+  border-radius: 10px 0px 0px 10px;
+}
+
+.menu ul li:first-child{
+  background-color: transparent;
+}
+
+.logo{
+  background-image: url("../../assets/steam.png");
+  background-size: 100% 100%;
+  height:inherit;
+}

@@ -1,0 +1,24 @@
+<div class="container-fluid otracosa">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-12 principal">
+    <div class="col-lg-5 col-md-5 col-sm-5 col-5 busqueda">
+      <div class="formulario">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 formulario_busqueda">
+            <form>
+              <input type="text" placeholder="Buscar..." [(ngModel)]="textoInput" name="id_Input">
+            </form>
+            <button type="submit" [routerLink]="['/usuario/'+textoInput]">Enviar</button>
+            <a>Introduce aquí un nombre de usuario a buscar ó los últimos dígitos de una ID64 ó ID128</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid usuarios col-lg-12 col-md-12 col-sm-12 col-12">
+    <li class="col-lg-3 col-md-3 col-sm-6 col-6" [routerLink]="['/usuario/'+elemento.steamid]" *ngFor="let elemento of arrayUsuarios">
+      <div><img src="{{elemento.avatar}}"></div>
+      <a>{{elemento.nombre}}</a>
+      <a>{{elemento.pais}}</a>
+    </li>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+div {
+  margin: 0px;
+  padding: 0px;
+}
+
+/*.otracosa {
+  min-height: 100vh; <-- 100% DEL ALTO DE LA PANTALLA
+  background-color: rgba(255, 255, 255, 0.5);
+}*/
+
+.principal {
+  text-align: center;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.busqueda {
+  height: inherit;
+  opacity: 1;
+  display: inline-block;
+
+}
+
+.formulario {
+  display: table-cell;
+  vertical-align: middle;
+  height: inherit;
+}
+
+.formulario_busqueda {
+  height: 130px;
+  padding-top: 10px;
+  width: inherit;
+  display: block;
+  border-style: none;
+  border-color: #fff;
+  border-width: 1px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.formulario_busqueda a {
+  font-size: 14px;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+}
+
+.formulario_busqueda form {
+  display: block;
+}
+
+.formulario_busqueda form input {
+  border-style: none;
+  width: 95%;
+  height: 40px;
+  opacity: 0.8;
+  border-radius: 20px 20px 20px 20px;
+  padding-left: 15px;
+}
+
+.formulario_busqueda form input:focus {
+  outline: none;
+}
+
+.formulario_busqueda button {
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: background 0.5s linear;
+  margin-top: 10px;
+  color: #fff;
+  width: 100%;
+  border: none;
+}
+
+.formulario_busqueda button:focus {
+  outline-color: white;
+}
+
+.formulario_busqueda button:hover {
+  background: rgba(0, 0, 0, 1);
+  transition: background-color 0.5s linear;
+}
+
+.login {
+  float: right !important;
+
+}
+
+.usuarios {
+  height: 300px;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.usuarios li:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.usuarios li {
+  display: inline-block;
+  list-style: none;
+  height: inherit;
+  background-color: transparent;
+  border: 1px solid white;
+  transition: background .5s ease-in-out;
+}
+
+.usuarios li:first-child {
+  border-left: none;
+}
+
+.usuarios li:last-child {
+  border-right: none;
+}
+
+.usuarios img {
+  display: block;
+  padding-top: 3vh;
+  height: inherit;
+  margin: auto;
+  background: 50% 50%;
+}
+
+.usuarios li a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+
+}
+
+.usuarios li:hover {
+  cursor: pointer;
+}

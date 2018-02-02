@@ -1,0 +1,101 @@
+<div class="container-fluid">
+  <div class="row">
+    <div *ngIf="usuario" class="col-lg-12 col-md-12 col-sm-12 col-12 principal">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-3 foto">
+          <div class="card" style="width: 100%;">
+            <img class="card-img-top" src="{{usuario.response.players[0].avatarfull}}" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title">{{usuario.response.players[0].personaname}}</h4>
+              <h1>{{nivelSteam.response.player_level}}</h1>
+              <a href="{{usuario.response.players[0].profileurl}}" class="btn btn-primary">Ir a su perfil de Steam</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-6 datos">
+          <ul>
+            <li>
+              <a *ngIf="usuario.response.players[0].loccountrycode">País:
+                {{usuario.response.players[0].loccountrycode}}</a>
+              <a *ngIf="!usuario.response.players[0].loccountrycode">País: No disponible loco</a>
+            </li>
+            <li><a>Nombre: {{usuario.response.players[0].realname}}</a></li>
+            <li><a>Último acceso: {{fechaconexion}}</a></li>
+            <li><a>Fecha de creación: {{fechacreacion}}</a></li>
+            <li><a>Nivel de Steam: {{nivelSteam.response.player_level}}</a></li>
+            <li><a>Número de juegos + DLCs: {{numeroJuegos.response.game_count}}</a></li>
+          </ul>
+          <div style="color: #fff;" class="col-lg-12 col-md-12 col-sm-12 col-12 ultimosJuegosJugados">
+            <hr>
+            <h1>Juegos recientes:</h1>
+            <li style="list-style: none" *ngFor="let elemento of ultimosJugados"
+                [routerLink]="['/games/'+elemento.appid]">
+              <div class="col-lg-9 col-md-9 col-sm-9 col-9 cajaJuego">
+                <p style="font-weight: bold">Nombre: {{elemento.nombre}}</p>
+                <a>Últimas 2 semanas: {{elemento.tiempo2semanas}} horas.</a>
+                <a>Tiempo total: {{elemento.tiempoTotal}} horas.</a>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-3 cajaImagen">
+                <img src="{{elemento.imagen}}">
+              </div>
+              <hr>
+            </li>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-3 divEstadisticas">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 estadistica">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">PAYDAY 2 STATS
+            </button>
+            <div *ngIf="tienePAYDAY2" id="demo" class="collapse cuadroEstadistica">
+              <a>Nivel de jugador: {{PAYDAY2_nivel}}</a><br>
+              <a>Atracos con éxito: {{PAYDAY2_atracos_exito}}</a><br>
+              <a>Atracos fallidos: {{PAYDAY2_atracos_fallidos}}</a><br>
+              <a>Partidas en modo normal: {{PAYDAY2_normal}}</a><br>
+              <a>Partidas en modo overkill: {{PAYDAY2_overkill}}</a><br>
+            </div>
+            <div *ngIf="!tienePAYDAY2" id="demo" class="collapse cuadroEstadistica">
+              <a>{{usuario.response.players[0].personaname}} no tiene PAYDAY 2.</a>
+            </div>
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 estadistica estadistica">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo1">CS:GO STATS</button>
+            <div *ngIf="tieneCSGO" id="demo1" class="collapse cuadroEstadistica bs-linebreak">
+              <a>Número de muertes: {{statsUsuarioCSGO.playerstats.stats[0].value}}</a><br>
+              <a>Tiempo jugado: {{statsUsuarioCSGO.playerstats.stats[2].value}}</a><br>
+              <a>Rondas ganadas: {{statsUsuarioCSGO.playerstats.stats[5].value}}</a><br>
+              <a>Headshots: {{statsUsuarioCSGO.playerstats.stats[25].value}}</a><br>
+              <a>Porcentaje de headshots: {{devuelvePorcentaje}}%</a><br>
+            </div>
+            <div *ngIf="!tieneCSGO" id="demo1" class="collapse cuadroEstadistica">
+              <a>{{usuario.response.players[0].personaname}} no tiene CSGO.</a>
+            </div>
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 estadistica">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo2">RUST STATS</button>
+            <div *ngIf="tieneRUST" id="demo2" class="collapse cuadroEstadistica">
+              <a>Número de muertes: {{statsUsuarioRUST.playerstats.stats[0].value}}</a><br>
+              <a>Jugadores que ha matado: {{statsUsuarioRUST.playerstats.stats[8].value}}</a><br>
+              <a>Disparos a jugadores: {{statsUsuarioRUST.playerstats.stats[9].value}}</a><br>
+              <a>Headshots: {{statsUsuarioRUST.playerstats.stats[23].value}}</a><br>
+              <a>Porcentaje de acierto: {{devuelvePorcentajeRUST}}%</a><br>
+            </div>
+            <div *ngIf="!tieneRUST" id="demo2" class="collapse cuadroEstadistica">
+              <a>{{usuario.response.players[0].personaname}} no tiene RUST.</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!usuario">
+    <div class="noexiste">
+      <h1>Lo sentimos, el usuario que estás buscando no existe.</h1>
+    </div>
+  </div>
+</div>
+
