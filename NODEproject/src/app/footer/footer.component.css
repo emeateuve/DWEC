@@ -1,0 +1,30 @@
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: red;
+  height: 40px;
+  min-width: 100%;
+  position: absolute;
+}
+
+.nombre{
+  display: inline-block;
+  height:inherit;
+
+}
+
+.links{
+  height: inherit;
+  text-align: center;
+  display: inline-block;
+}
+
+.links img{
+  height: 35px;
+  background-size: 100% 100%;
+
+}
+ .copy{
+   display: inline-block;
+   height:inherit;
+   text-align: right;
+ }
