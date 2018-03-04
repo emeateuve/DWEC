@@ -1,0 +1,85 @@
+.principal {
+  width: inherit;
+  height: inherit;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.datos {
+  background-color: transparent;
+  height: inherit;
+}
+
+.datos ul li {
+  color: #fff;
+  text-align: left;
+  list-style: none;
+  font-size: 18px;
+}
+
+.foto {
+  background-color: transparent;
+  border-right: 1px #fff solid;
+  height: inherit;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+  margin-top: 5vh;
+  height: inherit;
+  width: 100%;
+  text-align: center;
+  border-style: none;
+}
+
+.btn-primary {
+  width: 100%;
+}
+
+.collapse {
+  color: #fff;
+  width: 100%;
+}
+
+.estadistica {
+  width: 100%;
+  display: inline-block;
+  height: 30vh;
+}
+
+.divEstadisticas {
+  height: inherit;
+  border-left: 1px solid #fff;
+  padding-top: 10px;
+}
+
+.btn-info {
+  width: 100%;
+}
+
+.cuadroEstadistica a {
+  width: 100%;
+}
+
+.cajaJuego {
+  display: inline-block;
+  border-right: 1px solid white;
+}
+
+.cajaImagen {
+  display: inline-flex;
+  float: right;
+  height: inherit;
+
+}
+
+.ultimosJuegosJugados {
+  width: 100%;
+  background-color: transparent;
+}
+
+.ultimosJuegosJugados li:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background .5s ease-in-out;
+}
