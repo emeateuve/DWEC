@@ -1,12 +1,15 @@
 // Primer repaso
-var arrayNumeros = [10,20,30];
+var arrayNumeros = [10, 20, 30];
+
 function max(array) {
-    console.log(Math.max(array[0],array[1],array[2]));
+    console.log(Math.max(array[0], array[1], array[2]));
 }
+
 // max(arrayNumeros);
 var arrayContatos = [];
+
 class Agenda {
-    constructor(nombre,direccion,telefono,email){
+    constructor(nombre, direccion, telefono, email) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -15,25 +18,36 @@ class Agenda {
     }
 
 
-    introducirContacto(){
-        var nuevocontacto = {nombre: this.nombre,
-                        direccion: this.direccion,
-                        telefono:this.telefono,
-                        email:this.email};
+    introducirContacto() {
+        var nuevocontacto = {
+            nombre: this.nombre,
+            direccion: this.direccion,
+            telefono: this.telefono,
+            email: this.email
+        };
         this.arrayContactos.push(nuevocontacto);
     }
 
-    mostrarContacto(nombre){
-        for (let i = 0; i < this.arrayContactos.length; i++){
-            if(nombre == this.arrayContactos[i].nombre){
+    mostrarContacto(nombre) {
+        for (let i = 0; i < this.arrayContactos.length; i++) {
+            if (nombre == this.arrayContactos[i].nombre) {
                 console.log(this.arrayContactos[i])
             }
         }
     }
 
-    mostrarTodos(){
-        for (let i = 0; i < this.arrayContactos.length; i++){
+    mostrarTodos() {
+        for (let i = 0; i < this.arrayContactos.length; i++) {
             console.log(this.arrayContactos[i]);
+        }
+    }
+
+    borrarContacto(nombre) {
+        for (let i = 0; i < this.arrayContactos.length; i++) {
+            if (nombre == this.arrayContactos[i].nombre) {
+                console.log('Se ha eliminado ', nombre, ' de la Angeda');
+                this.arrayContactos[i].pop();
+            }
         }
     }
 }
@@ -50,3 +64,4 @@ class Agenda {
 //
 // pedro.mostrarContacto('Migue');
 // pedro.mostrarTodos();
+// pedro.borrarContacto('Antonio');
