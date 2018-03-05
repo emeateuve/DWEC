@@ -1,18 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {HttpClientModule} from "@angular/common/http";
+import {AppComponent} from './app.component';
+import {PeticionAjaxComponent} from './peticion-ajax/peticion-ajax.component';
+import {PeticionComponent} from './peticion/peticion.component';
+import {ServicioajaxService} from "./servicioajax.service";
 
 
-import { AppComponent } from './app.component';
-
+const appRoutes: Routes = [
+  {path: 'peticionajax', component: PeticionAjaxComponent},
+  {path: '', component: PeticionComponent}
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PeticionAjaxComponent,
+    PeticionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes, {enableTracing: false})
   ],
-  providers: [],
+  providers: [ServicioajaxService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
